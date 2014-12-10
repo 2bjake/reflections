@@ -1,5 +1,5 @@
 Template.reflectionItem.helpers({
   formattedDate: function() {
-  	return this.date.toDateString();
+    return dateUtils.fromDbToDisplayFormat(this.date);
   }
 });

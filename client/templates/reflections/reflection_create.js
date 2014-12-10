@@ -3,7 +3,7 @@ Template.reflectionCreate.events({
 		e.preventDefault();
 
 		var reflection = {
-			date: new Date($(e.target).find('[name=date]').val()),
+			date: dateUtils.fromDisplayToDbFormat($(e.target).find('[name=date]').val()),
 			title: $(e.target).find('[name=title]').val()
 		};
 
@@ -24,6 +24,6 @@ Template.reflectionCreate.events({
 
 Template.reflectionCreate.helpers({
 	today: function() {
-		return new Date().toDateString();
+		return dateUtils.todayDisplayFormat();
 	}
 });
