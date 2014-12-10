@@ -1,4 +1,4 @@
-Template.reflectionSubmit.events({
+Template.reflectionCreate.events({
 	'submit form': function(e) {
 		e.preventDefault();
 
@@ -22,7 +22,7 @@ Template.reflectionSubmit.events({
 	}
 });
 
-Template.reflectionSubmit.helpers({
+Template.reflectionCreate.helpers({
 	today: function() {
 		return new Date().toDateString();
 	}

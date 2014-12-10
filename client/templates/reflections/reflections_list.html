@@ -1,4 +1,5 @@
 <template name="reflectionsList">
+  <div class="post"><a href="{{pathFor 'reflectionCreate'}}" class="btn btn-default">Create new reflection</a></div>
   <div class="posts">
     {{#each reflections}}
       {{> reflectionItem}}
