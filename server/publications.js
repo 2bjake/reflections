@@ -3,5 +3,5 @@ Meteor.publish('posts', function() {
 });
 
 Meteor.publish('reflections', function() {
-  return Reflections.find();
+  return Reflections.find({userId: this.userId});
 });
