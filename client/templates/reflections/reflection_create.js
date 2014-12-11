@@ -2,9 +2,18 @@ Template.reflectionCreate.events({
 	'submit form': function(e) {
 		e.preventDefault();
 
+		var find = function(name) {
+			return $(e.target).find('[name=' + name + ']').val();
+		}
+
 		var reflection = {
-			date: dateUtils.fromDisplayToDbFormat($(e.target).find('[name=date]').val()),
-			title: $(e.target).find('[name=title]').val()
+			date: dateUtils.fromDisplayToDbFormat(find('date')),
+			title: find('title'),
+			accomplishments: find('accomplishments'),
+			todos: find('todos'),
+			enjoy: parseInt(find('enjoy')) || null,
+			effective: parseInt(find('effective')) || null,
+			journal: find('journal')
 		};
 
 		Meteor.call('reflectionInsert', reflection, function(error, result) {
