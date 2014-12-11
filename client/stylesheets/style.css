@@ -28,6 +28,9 @@ body {
 #spinner {
     height: 300px; }
 
+.create-button {
+    margin-bottom: 10px; }
+
 .post {
     /* For modern browsers */
     /* For IE 6/7 (trigger hasLayout) */
