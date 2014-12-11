@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/jake/workspace/reflections"
+			"path": "/Users/jake/workspace/reflections",
+			"folder_exclude_patterns": [".meteor"]
 		}
 	]
 }
