@@ -1,18 +1,18 @@
 <template name="reflectionPage">
 <div class="container-fluid">
   <div class="row">
-    <div class="post col-md-12">
+    <div class="col-md-12 reflection-summary">
       <h3>{{formattedDate}} - {{title}}</h3>
     </div>
   </div>
 
-  <div class="post row">
-    <div class="col-md-8">
+  <div class="row">
+    <div class="col-md-8 reflection-main">
       <h4>Journal entry</h4>
       <div class="reflection-text">{{journal}}</div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 reflection-side">
       {{#if accomplishments}}
       <h4>Accomplishments</h4>
       <div class="reflection-text">{{accomplishments}}</div>

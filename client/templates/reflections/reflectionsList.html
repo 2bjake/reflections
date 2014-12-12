@@ -1,8 +1,10 @@
 <template name="reflectionsList">
   {{#if noToday}}
-  <div class="create-button"><a href="{{pathFor 'reflectionCreate'}}" class="btn btn-default">Create reflection for {{today}}</a></div>
+  <div class="create-button">
+    <a href="{{pathFor 'reflectionCreate'}}" class="btn btn-default">Create reflection for today</a>
+  </div>
   {{/if}}
-  <div class="posts">
+  <div class="reflectionsList">
     {{#each reflections}}
       {{> reflectionSummary}}
     {{/each}}
