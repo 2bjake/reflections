@@ -25,12 +25,13 @@
 
       {{#if enjoy}}
       <h4>How enjoyable was today?</h4>
-      <div class="reflection-text">{{enjoy}}/10</div>
+      <!-- make div square, centered, text large -->
+      <div class="reflection-rating" style="background-color:{{enjoyColor}}">{{enjoy}}</div>
       {{/if}}
 
       {{#if effective}}
       <h4>How effective were you today?</h4>
-      <div class="reflection-text">{{effective}}/10</div>
+      <div class="reflection-rating" style="background-color:{{effectiveColor}}">{{effective}}</div>
       {{/if}}
     </div>
   </div>
