@@ -1,4 +1,4 @@
-Template.reflectionItem.helpers({
+Template.reflectionPage.helpers({
   formattedDate: function() {
     return dateUtils.fromDbToDisplayFormat(this.date);
   }
