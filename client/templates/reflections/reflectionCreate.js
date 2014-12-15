@@ -1,3 +1,5 @@
+var accomplishmentId = 0;
+
 Template.reflectionCreate.events({
 	'submit form': function(e) {
 		e.preventDefault();
@@ -21,13 +23,24 @@ Template.reflectionCreate.events({
 			if (error)
 				return alert(error.reason);
 			// show this result but route anyway
-      if (result.reflectionExists) //TODO: this bad, any added info is lost.  Instead the date should be checked when edited
-        alert('A reflection for this date has already been posted');
+			if (result.reflectionExists) //TODO: this bad, any added info is lost.  Instead the date should be checked when edited
+				alert('A reflection for this date has already been posted');
 
 			Router.go('reflectionPage', {
 				_id: result._id
 			});
 		});
+	},
+
+	'click #addAccomplishment': function(e) {
+		e.preventDefault();
+		$("#accomplishmentList")
+			.append('<div class="input-append"><input type="text" name="accomplishment" class="form-control"><button class="btn btn-danger deleteAccomplishment">-</button></div>');
+	},
+
+	'click .deleteAccomplishment': function(e) {
+		e.preventDefault();
+		$(e.target).parent("div").remove();
 	}
 });
 
