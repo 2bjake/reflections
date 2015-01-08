@@ -11,6 +11,12 @@
       {{#if equals type "number"}}
         {{> formNumber}}
       {{/if}}
+      {{#if equals type "select"}}
+        {{> formSelect}}
+      {{/if}}
+      {{#if equals type "radios"}}
+        {{> formRadios}}
+      {{/if}}
     </div>
   </div>
 </template>

@@ -1,0 +1,7 @@
+<template name="formRadios">
+  {{#each values}}
+    <label class="radio-inline">
+      <input type="radio" name="{{../id}}" value="{{this}}"> {{this}}
+    </label>
+  {{/each}}
+</template>
