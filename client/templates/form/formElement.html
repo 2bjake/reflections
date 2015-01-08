@@ -1,0 +1,16 @@
+<template name="formElement">
+  <div class="form-group">
+    <label class="control-label" for="{{id}}">{{label}}</label>
+    <div class="controls">
+      {{#if equals type "text"}}
+        {{> formText}}
+      {{/if}}
+      {{#if equals type "textarea"}}
+        {{> formTextarea}}
+      {{/if}}
+      {{#if equals type "number"}}
+        {{> formNumber}}
+      {{/if}}
+    </div>
+  </div>
+</template>
