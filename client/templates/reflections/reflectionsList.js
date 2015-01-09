@@ -3,7 +3,11 @@ Template.reflectionsList.helpers({
     return Reflections.find({}, {sort: {date: -1}});
   },
 
-  noToday: function() {
-    return ! Reflections.findOne({date: dateUtils.todayDbFormat()});
+  forms: function() {
+    return Forms.find();
+  },
+
+  noToday: function(formId) {
+    return ! Reflections.findOne({date: dateUtils.todayDbFormat(), formId: formId});
   }
 });
