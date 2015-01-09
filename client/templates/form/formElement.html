@@ -2,19 +2,19 @@
   <div class="form-group">
     <label class="control-label" for="{{id}}">{{label}}</label>
     <div class="controls">
-      {{#if equals type "text"}}
+      {{#if equals formElement "text"}}
         {{> formText}}
       {{/if}}
-      {{#if equals type "textarea"}}
+      {{#if equals formElement "textarea"}}
         {{> formTextarea}}
       {{/if}}
-      {{#if equals type "number"}}
+      {{#if equals formElement "number"}}
         {{> formNumber}}
       {{/if}}
-      {{#if equals type "select"}}
+      {{#if equals formElement "select"}}
         {{> formSelect}}
       {{/if}}
-      {{#if equals type "radios"}}
+      {{#if equals formElement "radios"}}
         {{> formRadios}}
       {{/if}}
     </div>
