@@ -2,18 +2,22 @@ Template.reflectionCreate.events({
   'submit form': function(e) {
     e.preventDefault();
 
-    var find = function(name) {
-      return $(e.target).find('[name=' + name + ']').val();
+    var elementValue = function(name, formElement) {
+      var str = '[name=' + name + ']';
+      if(formElement === "radios") {
+        str += ':checked';
+      }
+      return $(e.target).find(str).val();
     }
 
     var reflection = {
-      date: dateUtils.fromDisplayToDbFormat(find('date')),
+      date: dateUtils.fromDisplayToDbFormat(elementValue('date')),
       formId: this._id
     };
 
     for(var i = 0; i < this.fields.length; i++) {
       var field = this.fields[i];
-      reflection[field.id] = find(field.id);
+      reflection[field.id] = elementValue(field.id, field.formElement);
     }
 
     Meteor.call('reflectionInsert', reflection, function(error, result) {
