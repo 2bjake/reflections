@@ -6,7 +6,7 @@ if (Forms.find().count() === 0) {
       {id:"exercise", label:"Did you exercise?", type:"radios", values:["yes", "no"]},
       {id:"stretch", label:"Did you stretch?", type:"radios", values:["yes", "no"]},
       {id:"challenge", label:"Did you do the weekly challenge today?", type:"radios", values:["yes", "no"]},
-      {id:"reflection", label:"Reflection", type:"textarea", attributes:{rows: "5"}}
+      {id:"reflection", label:"Reflection", type:"textarea", htmlAttributes:{rows: "5"}}
     ]
   });
 
@@ -23,21 +23,21 @@ if (Forms.find().count() === 0) {
         id:"journal",
         label:"Journal entry",
         type:"textarea",
-        attributes:{rows: "20"},
+        htmlAttributes:{rows: "20"},
         check: "String"
       },
       {
         id:"accomplishments",
         label:"Accomplishments",
         type:"textarea",
-        attributes:{rows: "5"}, //TODO: rename 'attributes' to 'htmlAttributes'
+        htmlAttributes:{rows: "5"},
         check: "String"
       },
       {
         id:"todos",
         label:"Things to do tomorrow",
         type:"textarea",
-        attributes:{rows: "5"},
+        htmlAttributes:{rows: "5"},
         check: "String"
       },
       {
