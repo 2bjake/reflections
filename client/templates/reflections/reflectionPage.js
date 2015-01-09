@@ -7,10 +7,10 @@ Template.reflectionPage.helpers({
   },
 
   enjoyColor: function() {
-    return colors[this.enjoy - 1];
+    return colors[parseInt(this.enjoy) - 1];
   },
 
   effectiveColor: function() {
-    return colors[this.effective - 1];
+    return colors[parseInt(this.effective) - 1];
   }
 });

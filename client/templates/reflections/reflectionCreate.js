@@ -8,14 +8,13 @@ Template.reflectionCreate.events({
 
     var reflection = {
       date: dateUtils.fromDisplayToDbFormat(find('date')),
-      title: find('title'),
-      accomplishments: find('accomplishments'),
-      todos: find('todos'),
-      enjoy: parseInt(find('enjoy')) || null,
-      effective: parseInt(find('effective')) || null,
-      journal: find('journal'),
       formId: this._id
     };
+
+    for(var i = 0; i < this.fields.length; i++) {
+      var field = this.fields[i];
+      reflection[field.id] = find(field.id);
+    }
 
     Meteor.call('reflectionInsert', reflection, function(error, result) {
       // display the error to the user and abort
