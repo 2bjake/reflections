@@ -17,5 +17,15 @@ Template.reflectionSummary.helpers({
       }
     }
     return retval;
+  },
+
+  commentsText: function() {
+    if(this.comments.length === 0) {
+      return "";
+    } else if(this.comments.length === 1) {
+      return "1 comment";
+    } else {
+      return this.comments.length + " comments";
+    }
   }
 });

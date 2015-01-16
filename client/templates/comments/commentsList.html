@@ -1,0 +1,14 @@
+<template name="commentsList">
+  <div class="reflection-comments">
+    <h4>Comments</h4>
+    {{#each comments}}
+      {{> commentSummary}}
+    {{/each}}
+    <form class="main form">
+      <div class="form-group">
+        <textarea id="comment" class="form-control"></textarea>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+  </div>
+</template>
