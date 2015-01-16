@@ -1,39 +1,15 @@
 <template name="reflectionPage">
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 reflection-summary">
-      <h3>{{formattedDate}} - {{title}}</h3>
-    </div>
+  <div class="reflection-summary">
+    <h3>{{formattedDate}} - {{formTitle}}</h3>
   </div>
-
-  <div class="row">
-    <div class="col-md-8 reflection-main">
-      <h4>Journal entry</h4>
-      <div class="reflection-text">{{journal}}</div>
+  <div class="reflection-main">
+    {{#each formValues}}
+    <div>
+      <h4>{{label}}</h4>
+      <div class="reflection-text">{{value}}</div>
     </div>
-
-    <div class="col-md-4 reflection-side">
-      {{#if accomplishments}}
-      <h4>Accomplishments</h4>
-      <div class="reflection-text">{{accomplishments}}</div>
-      {{/if}}
-
-      {{#if todos}}
-      <h4>Things to do tomorrow</h4>
-      <div class="reflection-text">{{todos}}</div>
-      {{/if}}
-
-      {{#if enjoy}}
-      <h4>How enjoyable was today?</h4>
-      <!-- make div square, centered, text large -->
-      <div class="reflection-rating" style="background-color:{{enjoyColor}}">{{enjoy}}</div>
-      {{/if}}
-
-      {{#if effective}}
-      <h4>How effective were you today?</h4>
-      <div class="reflection-rating" style="background-color:{{effectiveColor}}">{{effective}}</div>
-      {{/if}}
-    </div>
+    {{/each}}
   </div>
 </div>
 </template>

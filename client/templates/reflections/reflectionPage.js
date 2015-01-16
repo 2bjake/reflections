@@ -1,16 +1,25 @@
 
-var colors = ['#E50016', '#E01C00', '#DC4D00', '#D87D00', '#D4AA00', '#C9CF00', '#97CB00', '#66C700', '#38C300', '#0CBF00'];
-
 Template.reflectionPage.helpers({
   formattedDate: function() {
     return dateUtils.fromDbToDisplayFormat(this.date);
   },
 
-  enjoyColor: function() {
-    return colors[parseInt(this.enjoy) - 1];
+  formTitle: function() {
+    return Forms.findOne(this.formId).name || "unknown";
   },
 
-  effectiveColor: function() {
-    return colors[parseInt(this.effective) - 1];
+  formValues: function() {
+    var form = Forms.findOne(this.formId);
+    var fields = form.fields;
+    values = [];
+    for(var i = 0; i < fields.length; i++) {
+      var fieldId = fields[i].id;
+      var fieldLabel = fields[i].label;
+      var value = this[fieldId];
+      if(value != undefined) {
+        values.push({label: fieldLabel, value: value});
+      }
+    }
+    return values;
   }
 });
