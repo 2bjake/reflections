@@ -1,6 +1,6 @@
 Template.reflectionsList.helpers({
   reflections: function() {
-    return Reflections.find({}, {sort: {date: -1}});
+    return Reflections.find({userId: Meteor.userId()}, {sort: {date: -1}});
   },
 
   forms: function() {
@@ -8,6 +8,6 @@ Template.reflectionsList.helpers({
   },
 
   noToday: function(formId) {
-    return ! Reflections.findOne({date: dateUtils.todayDbFormat(), formId: formId});
+    return ! Reflections.findOne({userId: Meteor.userId(), date: dateUtils.todayDbFormat(), formId: formId});
   }
 });

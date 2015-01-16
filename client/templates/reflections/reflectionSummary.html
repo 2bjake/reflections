@@ -1,6 +1,9 @@
 <template name="reflectionSummary">
   <div class="reflection-summary">
     <h4>{{formattedDate}} - {{formName}}</h4>
+    {{#each summaryFields}}
+    <div class="reflection-text">{{this.label}}: {{this.value}}</div>
+    {{/each}}
     <a href="{{pathFor 'reflectionPage'}}">View</a>
   </div>
 </template>

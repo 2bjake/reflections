@@ -1,0 +1,8 @@
+<template name="usersList">
+  Users TODO: style me!
+  <ul>
+  {{#each users}}
+    <li><a href="{{pathFor 'userPage'}}">{{username}}</a></li>
+  {{/each}}
+</ul>
+</template>

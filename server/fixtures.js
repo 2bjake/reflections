@@ -1,25 +1,28 @@
 if (Forms.find().count() === 0) {
   Forms.insert({
     name: "wlc",
-    private: false,
+    isPrivate: false,
     fields: [
       {
         id: "nutrition",
         label: "Nutrition Points",
         formElement: "select",
-        values: [5,4,3,2,1,0]
+        values: [5,4,3,2,1,0],
+        onSummary: true
       },
       {
         id: "exercise",
         label: "Did you exercise for at least 10 minutes?",
         formElement: "radios",
-        values: ["yes", "no"]
+        values: ["yes", "no"],
+        onSummary: true
       },
       {
         id: "stretch",
         label: "Did you stretch for at least 10 minutes?",
         formElement: "radios",
-        values: ["yes", "no"]
+        values: ["yes", "no"],
+        onSummary: true
       },
       {
         id: "challenge",
@@ -38,13 +41,14 @@ if (Forms.find().count() === 0) {
 
   Forms.insert({
     name: "work",
-    private: true,
+    isPrivate: true,
     fields: [
       {
         id:"title",
         label:"Title",
         formElement:"text",
-        checkExp: "String"
+        checkExp: "String",
+        onSummary: true
       },
       {
         id:"journal",
@@ -72,14 +76,16 @@ if (Forms.find().count() === 0) {
         label:"How enjoyable was today?",
         formElement:"select",
         values:[10,9,8,7,6,5,4,3,2,1],
-        checkExp: "String"
+        checkExp: "String",
+        onSummary: true
       },
       {
         id:"effective",
         label:"How effective were you today?",
         formElement:"select",
         values:[10,9,8,7,6,5,4,3,2,1],
-        checkExp: "String"
+        checkExp: "String",
+        onSummary: true
       }
     ]
   });
